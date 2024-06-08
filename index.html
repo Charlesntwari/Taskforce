@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Cards</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/79b8b085c2.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DIN+Condensed:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="animal-card" style="background-image: url('./images/fennecfox.png');" data-animal="FENNEC FOX" data-location="India">
+      <h2>FENNEC FOX</h2>
+      <p>India</p>
+      <a href="#" class="know-more">Know More<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="animal-card" style="background-image: url('./images/whale.png');" data-animal="HUMPBACK WHALE" data-location="South Africa">
+      <h2>HUMPBACK WHALE</h2>
+      <p>South Africa</p>
+      <a href="#" class="know-more">Know More<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="animal-card" style="background-image: url('./images/baboon.png');" data-animal="COMMON BROWN BABOON" data-location="South Africa">
+      <h2>COMMON BROWN BABOON</h2>
+      <p>South Africa</p>
+      <a href="#" class="know-more">Know More<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="animal-card" style="background-image: url('./images/deer.png');" data-animal="SPOTTED DEER" data-location="Amazon">
+      <h2>SPOTTED DEER</h2>
+      <p>Amazon</p>
+      <a href="#" class="know-more">Know More<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+  
+  <div id="animalModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="animalName"></h2>
+      <img id="animalImage" src="" alt="Animal Image">
+      <p id="animalDetails"></p>
+      <p id="animalLocation"></p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
