@@ -1,0 +1,163 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+}
+
+.animal-card {
+  position: relative;
+  width: 100%;
+  max-width: 20%;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.animal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, filter 0.3s;
+  z-index: 0;
+  filter: none; /* No filter by default */
+}
+
+.animal-card:hover::before {
+  transform: scale(1.02); /* Slight scale effect */
+  filter: grayscale(100%) blur(3.4px); /* Grayscale and blur effect */
+}
+
+.animal-card h2, .animal-card p, .animal-card .know-more {
+  margin: 0;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  text-align: left;
+  width: calc(100% - 20px);
+  z-index: 2; /* Ensure text is above the image */
+  transition: all  0.3s ease-in-out; 
+}
+
+.animal-card h2 {
+  bottom: 50px; /* Positioning for the heading */
+  font-family: 'DIN Condensed', sans-serif; /* Apply DIN Condensed font */
+}
+
+.animal-card p {
+  bottom: 30px; /* Positioning for the paragraph */
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  opacity: 70%;
+  height: 16px;
+}
+
+.animal-card .know-more {
+  bottom: 10px; /* Positioning for the 'know more' link */
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  color: #1d94b8e6; /* Green text */
+  text-decoration: none;
+  display: none; /* Hide 'know more' link initially */
+}
+
+.animal-card .fa-solid {
+  margin-left: 8px;
+}
+
+.animal-card:hover .know-more {
+  display: block; /* Show 'know more' link on hover */
+  transition: all  0.3s ease-in-out; 
+}
+
+.animal-card:hover h2, .animal-card:hover p {
+  bottom: 90px; /* Scroll up the text on hover */
+}
+
+.animal-card:hover p {
+  bottom: 70px; /* Scroll up the text on hover */
+}
+
+.animal-card:hover .know-more {
+  bottom: 30px; /* Scroll up the 'know more' link on hover */
+}
+
+.animal-card * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .animal-card {
+    width: 90%; /* Fit the screen width */
+    max-width: none;
+    margin: 10px 0; /* Space between cards vertically */
+  }
+
+}
