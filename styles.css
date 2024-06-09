@@ -43,12 +43,12 @@ body, html {
   background-position: center;
   transition: transform 0.3s, filter 0.3s;
   z-index: 0;
-  filter: none; /* No filter by default */
+  filter: none;
 }
 
 .animal-card:hover::before {
-  transform: scale(1.02); /* Slight scale effect */
-  filter: grayscale(100%) blur(3.4px); /* Grayscale and blur effect */
+  transform: scale(1.02);
+  filter: grayscale(100%) blur(3.4px);
 }
 
 .animal-card h2, .animal-card p, .animal-card .know-more {
@@ -60,49 +60,51 @@ body, html {
   right: 10px;
   text-align: left;
   width: calc(100% - 20px);
-  z-index: 2; /* Ensure text is above the image */
+  z-index: 2;
   transition: all  0.3s ease-in-out; 
 }
 
 .animal-card h2 {
-  bottom: 50px; /* Positioning for the heading */
-  font-family: 'DIN Condensed', sans-serif; /* Apply DIN Condensed font */
+  bottom: 50px;
+  font-family: 'DIN Condensed', sans-serif;
 }
 
 .animal-card p {
-  bottom: 30px; /* Positioning for the paragraph */
-  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  bottom: 30px;
+  font-family: 'Poppins', sans-serif;
   opacity: 70%;
   height: 16px;
 }
 
 .animal-card .know-more {
-  bottom: 10px; /* Positioning for the 'know more' link */
-  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
-  color: #1d94b8e6; /* Green text */
+  bottom: 10px; 
+  font-family: 'Poppins', sans-serif;
+  color: #1d94b8e6;
   text-decoration: none;
-  display: none; /* Hide 'know more' link initially */
+  display: none;
 }
 
 .animal-card .fa-solid {
   margin-left: 8px;
 }
 
+
+
 .animal-card:hover .know-more {
-  display: block; /* Show 'know more' link on hover */
+  display: block;
   transition: all  0.3s ease-in-out; 
 }
 
 .animal-card:hover h2, .animal-card:hover p {
-  bottom: 90px; /* Scroll up the text on hover */
+  bottom: 90px;
 }
 
 .animal-card:hover p {
-  bottom: 70px; /* Scroll up the text on hover */
+  bottom: 70px;
 }
 
 .animal-card:hover .know-more {
-  bottom: 30px; /* Scroll up the 'know more' link on hover */
+  bottom: 30px; 
 }
 
 .animal-card * {
@@ -124,13 +126,21 @@ body, html {
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 500px;
-  position: relative;
+    background-color: #fefefe;
+    margin: 1% auto;
+    margin-top: -81px;
+    margin-bottom: 27px;
+    padding: 70px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 86%;
+    max-width: 500px;
+    position: relative;
+}
+
+.animalImage{
+  height: 300px;
+  width: 100%;
 }
 
 .close {
@@ -138,6 +148,7 @@ body, html {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  padding-top: 15px;
 }
 
 .close:hover,
@@ -148,16 +159,48 @@ body, html {
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
+/* Modal responsiveness */
+@media (max-width: 768px) {
+ .modal-content {
+    width: 90%;
+    height: 80%;
+    padding: 20px;
   }
-
-  .animal-card {
-    width: 90%; /* Fit the screen width */
-    max-width: none;
-    margin: 10px 0; /* Space between cards vertically */
+ .animalImage {
+    height: 200px !important;
   }
+}
 
+@media (max-width: 480px) {
+ .modal-content {
+    width: 95%;
+    height: 70%;
+    padding: 10px;
+  }
+ .animalImage {
+    height: 150px !important;
+  }
+}
+
+/* Animal card responsiveness */
+@media (max-width: 768px) {
+ .animal-card {
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container{
+    height: 48%;
+    gap:15px;
+  }
+ .animal-card {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+ .animal-card {
+    max-width: 90%;
+  }
 }
